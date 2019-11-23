@@ -1,5 +1,0 @@
-Optional[value string]={
-    get?string={
-         return value;
-    }
-}

@@ -1,9 +1,19 @@
 package com.meti.interpret;
 
-public interface Variable {
-    Type type();
+public class Variable {
+    private final Type type;
+    private final String name;
 
-    String name();
+    public Variable(Type type, String name) {
+        this.type = (type == null) ? Primitive.ANY : type;
+        this.name = name;
+    }
 
-    boolean isMutable();
+    public Type type() {
+        return type;
+    }
+
+    public String name(){
+        return name;
+    }
 }

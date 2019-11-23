@@ -1,22 +1,12 @@
 package com.meti.interpret;
 
-import com.meti.assemble.AssemblyNode;
-
-import java.util.List;
-import java.util.Optional;
+import com.meti.assemble.node.Node;
+import com.meti.interpret.statement.Statement;
 
 public interface Interpreter {
-    List<Statement> statements();
+    Statement interpret(Node node);
 
-    Optional<Function> byName(String name);
+    Type resolve(Statement statement);
 
-    void clear();
-
-    Type find(String... names);
-
-    void load(AssemblyNode node);
-
-    Statement loadChild(AssemblyNode node);
-
-	Type resolve(AssemblyNode value);
+    Type resolve(String value);
 }
